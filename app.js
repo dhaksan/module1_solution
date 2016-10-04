@@ -27,10 +27,10 @@
                     else if ($scope.lengthValue > 3 ){
                       $scope.lunch="Too much!!";
                     }
-                    else {
+                    else if ($scope.lengthValue <1){
                       $scope.lunch="Please enter something first";
                     }
-                              $scope.lengthValue=0;
+                    $scope.lengthValue=0;
                   };
 };
 })();
