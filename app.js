@@ -5,11 +5,16 @@
 
             function lunchCheckController($scope, $filter){
                 $scope.name="";
-                $scope.lengthValue=0;
+$scope.lengthValue=0;
 
                 $scope.lengthcheck=function () {
+if ($scope.name !="") {
                   var totalNameValue=calculatenumericvalue($scope.name);
                   $scope.lengthValue=totalNameValue;
+                }
+                else {
+                  $scope.lengthValue=0; 
+                }
                 };
 
                 function calculatenumericvalue(string){
@@ -21,6 +26,7 @@
 
 
                   $scope.evallength=function(){
+
                     if ($scope.lengthValue >=1 && $scope.lengthValue <=3){
                       $scope.lunch="Enjoy Your Lunch!";
                     }
@@ -30,7 +36,7 @@
                     else if ($scope.lengthValue <1){
                       $scope.lunch="Please enter something first";
                     }
-                    $scope.lengthValue=0;
+
                   };
 };
 })();
