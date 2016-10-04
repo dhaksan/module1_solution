@@ -1,29 +1,31 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <style>
-      .message { font-size: 1.3em; font-weight: bold; }
-    </style>
+body {background-color: powderblue;}
+h1   {color: blue; text-align: center; }
+div2    {color: red;}
+</style>
+    <title>Food Check</title>
   </head>
-<body>
-   <div class="container">
-     <h1>Lunch Checker</h1>
 
-         <div class="form-group">
-             <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
-         </div>
-         <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
-         </div>
-         <div class="form-group message">
-           <!-- Your message can go here. -->
-         </div>
-   </div>
 
-</body>
+  <body ng-app="foodcheck">
+<h1> Check if you have eating disorder</h1>
+      <div ng-controller="lunchCheckController">
+        <input type="text" ng-model="name"
+        ng-keyup="lengthcheck()"
+        placeholder="Please enter the list of food seperated by Comma"
+        size="50";>
+      </br></br>
+        <button ng-click="evallength();">Check if Too Much!</button>
+        </br></br></br>
+        <h3> {{lunch}}</h3>
+    <div2> Total number of items you entered is: {{lengthValue}}</div2>
+
+  </div>
+    </body>
 </html>
