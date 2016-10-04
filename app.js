@@ -30,6 +30,7 @@
                     else {
                       $scope.lunch="Please enter something first";
                     }
+                              $scope.lengthValue=0;
                   };
 };
 })();
